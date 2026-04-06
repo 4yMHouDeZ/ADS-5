@@ -30,7 +30,9 @@ std::string infx2pstfx(const std::string& inf) {
       stack.push(el);
     } else if (isOperation(el)) {
       separate(result);
-      if (((el == '-' || el == '+') && (stack.peek() == '-' || stack.peek() == '+')) || ((el == '/' || el == '*') && (stack.peek() == '/' || stack.peek() == '*')) || ((el == '-' || el == '+') && (stack.peek() == '*' || stack.peek() == '/'))) {
+      if (((el == '-' || el == '+') && (stack.peek() == '-' || stack.peek() == '+'))
+      || ((el == '/' || el == '*') && (stack.peek() == '/' || stack.peek() == '*'))
+      || ((el == '-' || el == '+') && (stack.peek() == '*' || stack.peek() == '/'))) {
         result += stack.peek();
         stack.pop();
       }
@@ -54,7 +56,6 @@ std::string infx2pstfx(const std::string& inf) {
   }
   return result;
 }
-
 
 int eval(const std::string& post) {
   TStack<int, 100> stack;

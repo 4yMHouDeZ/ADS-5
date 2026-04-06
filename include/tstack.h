@@ -1,15 +1,23 @@
 // Copyright 2021 NNTU-CS
 #ifndef INCLUDE_TSTACK_H_
 #define INCLUDE_TSTACK_H_
+#define SIZE_MIN 100
+#define SIZE_MAX 500
 
 template<typename T, int size>
 class TStack {
  private:
   int top;
-  T data[size];
+  T data;
 
  public:
-  TStack(): top(-1) {}
+  TStack(): top(-1) {
+    if (size <= 100) {
+      T data[SIZE_MIN];
+    } else {
+      T data[SIZE_MAX];
+    }
+  }
 
   bool isEmpty() {
     return top == -1;
