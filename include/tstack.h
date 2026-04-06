@@ -4,11 +4,11 @@
 #define SIZE_MIN 100
 #define SIZE_MAX 500
 
-template<typename T,  int size>
+template<typename T,  int kSize>
 class TStack {
  private:
   int top;
-  T data[size];
+  T data[kSize];
 
  public:
   TStack(): top(-1) {}

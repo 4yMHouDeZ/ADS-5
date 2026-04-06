@@ -30,9 +30,12 @@ std::string infx2pstfx(const std::string& inf) {
       stack.push(el);
     } else if (isOperation(el)) {
       separate(result);
-      if (((el == '-' || el == '+') && (stack.peek() == '-' || stack.peek() == '+'))
-      || ((el == '/' || el == '*') && (stack.peek() == '/' || stack.peek() == '*'))
-      || ((el == '-' || el == '+') && (stack.peek() == '*' || stack.peek() == '/'))) {
+      if (((el == '-' || el == '+')
+      && (stack.peek() == '-' || stack.peek() == '+'))
+      || ((el == '/' || el == '*')
+      && (stack.peek() == '/' || stack.peek() == '*'))
+      || ((el == '-' || el == '+')
+      && (stack.peek() == '*' || stack.peek() == '/'))) {
         result += stack.peek();
         stack.pop();
       }
