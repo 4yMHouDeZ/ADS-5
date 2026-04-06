@@ -1,8 +1,6 @@
 // Copyright 2021 NNTU-CS
 #ifndef INCLUDE_TSTACK_H_
 #define INCLUDE_TSTACK_H_
-#define SIZE_MIN 100
-#define SIZE_MAX 500
 
 template<typename T,  int kSize>
 class TStack {
@@ -18,7 +16,7 @@ class TStack {
   }
 
   bool isFull() {
-    return (top >= size);
+    return (top >= kSize);
   }
 
   void push(T el) {
