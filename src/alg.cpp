@@ -21,10 +21,9 @@ int ch2i(char x) {
 
 std::string infx2pstfx(const std::string& inf) {
   TStack<char, 100> stack;
-  char el;
   std::string result = "";
   for (int i = 0; i < inf.length(); i++) {
-    el = inf[i];
+    char el = inf[i];
 
     if (el == '(') {
       separate(result);
@@ -63,10 +62,9 @@ std::string infx2pstfx(const std::string& inf) {
 
 int eval(const std::string& post) {
   TStack<int, 100> stack;
-  char el;
   int a, b, temp;
   for (int i = 0; i < post.length(); i++) {
-    el = post[i];
+    char el = post[i];
     
     if (isDigit(el)) {
       if (i > 0 && isDigit(post[i-1])) {

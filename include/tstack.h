@@ -4,9 +4,11 @@
 
 template<typename T, int size>
 class TStack {
+  
   private:
     int top;
     T data[size];
+
   public:
     TStack(): top(-1) {}
 
