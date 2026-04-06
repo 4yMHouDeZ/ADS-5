@@ -28,9 +28,7 @@ std::string infx2pstfx(const std::string& inf) {
     if (el == '(') {
       separate(result);
       stack.push(el);
-    }
-
-    else if (isOperation(el)) {
+    } else if (isOperation(el)) {
       separate(result);
       if (((el == '-' || el == '+') && (stack.peek() == '-' || stack.peek() == '+')) || ((el == '/' || el == '*') && (stack.peek() == '/' || stack.peek() == '*')) || ((el == '-' || el == '+') && (stack.peek() == '*' || stack.peek() == '/'))) {
         result += stack.peek();
@@ -38,11 +36,9 @@ std::string infx2pstfx(const std::string& inf) {
       }
       stack.push(el);
       separate(result);
-    }
-
-    else if (isDigit(el)) result += el;
-
-    else if (el == ')') {
+    } else if (isDigit(el)) {
+      result += el;
+    } else if (el == ')') {
       while (stack.peek() != '(') {
         separate(result);
         result += stack.peek();
