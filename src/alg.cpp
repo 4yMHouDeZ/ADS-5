@@ -65,7 +65,7 @@ int eval(const std::string& post) {
   int a, b, temp;
   for (int i = 0; i < post.length(); i++) {
     char el = post[i];
-    
+
     if (isDigit(el)) {
       if (i > 0 && isDigit(post[i-1])) {
         temp = stack.peek() * 10 + ch2i(el);
